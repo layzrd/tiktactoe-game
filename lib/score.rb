@@ -6,9 +6,9 @@ class Score
     false
   end
 
-  def initialize(player)
-    @player = player
-  end
+  # def initialize(player)
+  #   @player = player
+  # end
 
   def get_position(board, current_position)
     board.each_with_index do |item, index|
@@ -29,7 +29,7 @@ class Score
 
   def check_winner(board, current_position)
     current_row = get_position(board, current_position)
-    board[current_row[0]][current_row[1]] = player.current_play_icon # * or #
+    board[current_row[0]][current_row[1]] = '*' #player.current_play_icon # * or #
     if (board[current_row[0]][0].eql? board[current_row[0]][1]) &&
        (board[current_row[0]][2].eql? board[current_row[0]][1]) ||
        (board[0][current_row[1]].eql? board[1][current_row[1]]) &&
