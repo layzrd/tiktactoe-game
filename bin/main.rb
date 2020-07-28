@@ -1,15 +1,13 @@
-#!/usr/bin/env ruby
-
 def _input
   inp = gets.chomp
   unless inp
     puts 'Please enter a valid input'
-    getInput
+    _input
   end
   inp
 end
 
-def print_board(board)
+def print_board(board, player)
   puts '***** #print_board start'
   board.each do |line|
     line.each do |item|
@@ -18,41 +16,42 @@ def print_board(board)
     puts ''
   end
   puts '***** #print_board end'
+  next_move(board, player)
 end
 
-puts 'Welcome to the Tic tac Toe field'
+def next_move(board, player)
+  score = Score.new(player)
+  puts 'Enter Your Next Move'
+  goto = gets.chomp.to_i
+  # goto = rand(9)
+  row = score.get_position(board, goto)
+  unless row
+    puts 'Please enter a number within the board'
+    next_move(board, player)
+  end
 
-puts 'Player 1: Enter Your Name'
-opponent_one = _input.capitalize
-puts 'Player 2: Enter Your Name'
-opponent_two = _input.capitalize
+  print_board(board, player) unless score.check_winner(board, goto)
+end
 
-puts '*********************'
-puts "#{opponent_one} VS #{opponent_two}"
-puts '*********************'
+def bootstrap
+  player = Player.new
+  init_board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  puts 'Welcome to the Tic tac Toe field'
+  puts 'Player 1: Enter Your Name'
+  player.name = _input.capitalize
+  puts 'Player 2: Enter Your Name'
+  player.name = _input.capitalize
 
-puts '***** INSTRUCTION *****'
-puts "Enter the respective number to concure the space \n
-If one player write a straight line he/she/they would be a winner \n"
+  puts '*********************'
+  puts "#{player.name[0]} VS #{player.name[1]}"
+  puts '*********************'
 
-puts 'Here is the playing board select your move'
-puts print_board
+  puts '***** INSTRUCTION *****'
+  puts "Enter the respective number to concure the space \n
+  If one player write a straight line he/she/they would be a winner \n"
 
-puts 'Enter Your Next Move'
+  puts 'Here is the playing board select your move'
+  print_board(init_board, player)
+end
 
-puts "Hooray! \n #{winner.name} win the game \n
-If one player write a straight line he/she/they would be a winner"
-
-puts 'Here is the playing board select your move'
-puts 'Choose one of the spaces on the board'
-
-puts '1|2|3'
-puts '______'
-puts '4|5|6'
-puts '______'
-puts '7|8|9'
-puts "#{opponent_one} make your move"
-
-puts print_board
-
-puts "Hooray! \n #{opponent_one} win the game"
+bootstrap
