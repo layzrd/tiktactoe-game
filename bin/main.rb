@@ -27,7 +27,6 @@ def next_move(board, player)
   score = Score.new(player)
   puts "#{player.current_player}#{player.icon} Enter Your Move"
   goto = gets.chomp.to_i
-  # goto = rand(9)
   row = score.get_position(board, goto)
   unless row
     puts 'Please enter a number within the board'

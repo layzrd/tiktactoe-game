@@ -22,7 +22,6 @@ class Score
   end
 
   def check_winner(board, current_row)
-    # current_row = get_position(board, current_position)
     board[current_row[0]][current_row[1]] = players.icon
     if (board[current_row[0]][0].eql? board[current_row[0]][1]) &&
        (board[current_row[0]][2].eql? board[current_row[0]][1]) ||
