@@ -36,9 +36,9 @@ class Score
   end
 
   def draw(board)
-    return false if board.flatten.count { |item| item.is_a(Integer) } > 4
+    return true if board.flatten.count { |item| item == '#' } > 4
 
-    true
+    false
   end
 
   private

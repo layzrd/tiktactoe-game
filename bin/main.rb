@@ -1,3 +1,7 @@
+#!/usr/bin/env ruby
+require_relative '../lib/player'
+require_relative '../lib/score'
+
 def _input
   inp = gets.chomp
   unless inp
@@ -7,21 +11,21 @@ def _input
   inp
 end
 
-def print_board(board, player)
-  puts '***** #print_board start'
+def print_board(board, player, die = false)
+  puts '*********=Board=*********'
   board.each do |line|
     line.each do |item|
       print item.to_s + ' '
     end
     puts ''
   end
-  puts '***** #print_board end'
-  next_move(board, player)
+  puts '*********/=Board=/*********'
+  next_move(board, player) unless die
 end
 
 def next_move(board, player)
   score = Score.new(player)
-  puts 'Enter Your Next Move'
+  puts "#{player.current_player}#{player.icon} Enter Your Move"
   goto = gets.chomp.to_i
   # goto = rand(9)
   row = score.get_position(board, goto)
@@ -30,14 +34,16 @@ def next_move(board, player)
     next_move(board, player)
   end
   if score.check_winner(board, row)
-    puts 'You Win!!'
+    print_board(board, player, true)
+    puts "#{player.current_player} Win!!"
     exit(true)
-  elsif score.draw
-    puts 'Draw'
+  elsif score.draw(board)
+    print_board(board, player, true)
+    puts '*********=DRAW=*********'
     exit(true)
   end
-  # print_board(board, player) unless
   player.next_player
+  print_board(board, player)
 end
 
 def bootstrap
@@ -45,12 +51,12 @@ def bootstrap
   init_board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
   puts 'Welcome to the Tic tac Toe field'
   puts 'Player 1: Enter Your Name'
-  player.name = _input.capitalize
+  player.players.push(_input.capitalize)
   puts 'Player 2: Enter Your Name'
-  player.name = _input.capitalize
+  player.players.push(_input.capitalize)
 
   puts '*********************'
-  puts "#{player.name[0]} VS #{player.name[1]}"
+  puts "#{player.players[0]} VS #{player.players[1]}"
   puts '*********************'
 
   puts '***** INSTRUCTION *****'
