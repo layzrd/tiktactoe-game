@@ -1,56 +1,69 @@
 #!/usr/bin/env ruby
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+require_relative '../lib/player'
+require_relative '../lib/score'
 
-def _input(name = false)
+def _input
   inp = gets.chomp
-  return inp if name
-
-  return inp.to_i if inp.match(/[1-9]/)
-
-  puts 'Please enter a valid input'
-  _input
-end
-
-def change_array(array, player)
-  move = _input - 1
-  if move.positive? && move < 10
-    move_player = move
-    array[move_player] = player[0]
-    return array
+  unless inp
+    puts 'Please enter a valid input'
+    _input
   end
-  array
+  inp
 end
 
-puts 'Welcome to the Tic tac Toe field'
-
-puts 'Player 1: Enter Your Name'
-opponent_one = _input(true).capitalize
-puts 'Player 2: Enter Your Name'
-opponent_two = _input(true).capitalize
-
-puts '*********************'
-puts "#{opponent_one} VS #{opponent_two}"
-puts '*********************'
-
-puts '***** INSTRUCTION *****'
-puts "Enter the respective number to concure the space \n
-If one player write a straight line he/she/they would be a winner \n"
-
-puts 'Here is the playing board select your move'
-puts 'Choose one of the spaces on the board'
-
-def print_score(array)
-  puts '----------------------------------'
-  puts "#{array[0]}|#{array[1]}|#{array[2]}"
-  puts '______'
-  puts "#{array[3]}|#{array[4]}|#{array[5]}"
-  puts '______'
-  puts "#{array[6]}|#{array[7]}|#{array[8]}"
-  puts '----------------------------------'
+def print_board(board, player, die = false)
+  puts '*********=Board=*********'
+  board.each do |line|
+    line.each do |item|
+      print item.to_s + ' '
+    end
+    puts ''
+  end
+  puts '*********/=Board=/*********'
+  next_move(board, player) unless die
 end
 
-puts "#{opponent_one} make your move"
+def next_move(board, player)
+  score = Score.new(player) # manage player scores
+  puts "#{player.current_player}#{player.icon} Enter Your Move"
+  goto = gets.chomp.to_i
+  row = score.get_position(board, goto)
+  unless row
+    puts 'Please enter a number within the board'
+    next_move(board, player)
+  end
+  if score.check_winner(board, row)
+    print_board(board, player, true)
+    puts "#{player.current_player} Win!!"
+    exit(true)
+  elsif score.draw(board)
+    print_board(board, player, true)
+    puts '*********=DRAW=*********'
+    exit(true)
+  end
+  player.next_player
+  print_board(board, player)
+end
 
-print_score array
+def bootstrap
+  player = Player.new # manage all players
+  init_board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  puts 'Welcome to the Tic tac Toe field'
+  puts 'Player 1: Enter Your Name'
+  player.players.push(_input.capitalize)
+  puts 'Player 2: Enter Your Name'
+  player.players.push(_input.capitalize)
 
-puts "Hooray! \n#{opponent_one} win the game"
+  puts '*********************'
+  puts "#{player.players[0]} VS #{player.players[1]}"
+  puts '*********************'
+
+  puts '***** INSTRUCTION *****'
+  puts "Enter the respective number to concure the space \n
+  If one player write a straight line he/she/they would be a winner \n"
+
+  puts 'Here is the playing board select your move'
+  print_board(init_board, player)
+end
+
+bootstrap
