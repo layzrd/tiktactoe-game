@@ -41,6 +41,12 @@ Set up your machine.
 
 Go to the project directory and run open the `ruby bin/ruby.rb` file on your terminal.
 
+- Instruction to play tictactoe game
+  1. The game is played on a grid that's 3 squares by 3 squares.
+  2. You are #, your friend *. Players take turns putting their marks in numbered squares.
+  3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the   winner.
+  4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+
 ## Authors
 
 👤 **Abdulaziz Ali**
@@ -48,6 +54,12 @@ Go to the project directory and run open the `ruby bin/ruby.rb` file on your ter
 - Github: [@abredi](https://github.com/abredi)
 - Twitter: [@rediabdulaziz](https://twitter.com/rediabdulaziz)
 - Linkedin: [linkedin](https://www.linkedin.com/in/abdulaziz-ali-98948011a)
+
+👤 **Pablo Alexis Zambrano Coral**
+
+- Github: [@Alexoid1](https://github.com/Alexoid1)
+- Twitter: [@pablo_acz](https://twitter.com/pablo_acz)
+- Linkedin: [linkedin](https://www.linkedin.com/in/pablo-alexis-zambrano-coral-7a614a189/)
 
 ## 🤝 Contributing
 
