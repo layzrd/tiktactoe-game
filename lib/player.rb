@@ -2,7 +2,7 @@ class Player
   attr_accessor :players
 
   def initialize
-    self.players = []
+    @players = []
     @index = -1
   end
 
