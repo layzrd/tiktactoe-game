@@ -8,16 +8,16 @@ class Player
 
   def icon
     icons = %w[* #]
-    icons[index]
+    icons[@index]
   end
 
   def next_player
-    index += 1
-    index = 0 if index >= player.length
-    index
+    @index += 1
+    @index = 0 if @index >= players.length
+    @index
   end
 
   def current_player
-    players[index]
+    players[@index]
   end
 end

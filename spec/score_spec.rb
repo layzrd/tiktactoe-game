@@ -12,6 +12,8 @@ RSpec.describe Score do
     player
   end
 
+  before { player.next_player }
+
   context 'when first created' do
     it 'should be instance of Score' do
       expect(subject).to be_kind_of(Score)
@@ -30,19 +32,19 @@ RSpec.describe Score do
 
   context '#check_winner' do
     it 'test for a horizontal direction accomplishment' do
-      expect(subject.check_winner([['*', 2, 3], ['*', 5, 6], [7, 8, 9]], 7)).to be(true)
+      expect(subject.check_winner([['*', 2, 3], ['*', 5, 6], [7, 8, 9]], [2, 0])).to be(true)
     end
 
     it 'test for a diagonal' do
-      expect(subject.check_winner([[1, 2, '*'], [4, 5, 6], ['*', 8, 9]], 5)).to be(true)
+      expect(subject.check_winner([[1, 2, '*'], [4, 5, '#'], ['*', 8, 9]], [1, 1])).to be(true)
     end
 
-    it 'test for a diagonal' do
-      expect(subject.check_winner([[1, 2, '*'], [4, 5, '*'], [7, 8, 9]], 9)).to be(true)
+    it 'test for a vertical direction accomplishment' do
+      expect(subject.check_winner([[1, 2, '*'], [4, 5, '*'], [7, 8, 9]], [2, 2])).to be(true)
     end
 
     it 'test for a unfinished game' do
-      expect(subject.check_winner([[1, 2, '*'], [4, 5, 6], [7, 8, 9]], 9)).to be(false)
+      expect(subject.check_winner([[1, 2, '*'], [4, 5, 6], [7, 8, 9]], [1, 2])).to be(false)
     end
   end
 end
