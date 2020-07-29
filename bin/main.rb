@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-def _input
+def _input(name = false)
   inp = gets.chomp
+  return inp if name
+
   return inp.to_i if inp.match(/[1-9]/)
 
   puts 'Please enter a valid input'
@@ -13,17 +16,17 @@ def change_array(array, player)
   if move.positive? && move < 10
     move_player = move
     array[move_player] = player[0]
-    return print_score(array)
+    return array
   end
-  []
+  array
 end
 
 puts 'Welcome to the Tic tac Toe field'
 
 puts 'Player 1: Enter Your Name'
-opponent_one = _input.capitalize
+opponent_one = _input(true).capitalize
 puts 'Player 2: Enter Your Name'
-opponent_two = _input.capitalize
+opponent_two = _input(true).capitalize
 
 puts '*********************'
 puts "#{opponent_one} VS #{opponent_two}"
@@ -34,15 +37,8 @@ puts "Enter the respective number to concure the space \n
 If one player write a straight line he/she/they would be a winner \n"
 
 puts 'Here is the playing board select your move'
-
-puts 'Enter Your Next Move'
-puts "Hooray! \n {winner.name} win the game \n
-If one player write a straight line he/she/they would be a winner"
-
-puts 'Here is the playing board select your move'
 puts 'Choose one of the spaces on the board'
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 def print_score(array)
   puts '----------------------------------'
   puts "#{array[0]}|#{array[1]}|#{array[2]}"
@@ -56,6 +52,5 @@ end
 puts "#{opponent_one} make your move"
 
 print_score array
-p change_array(array, opponent_one)
 
-puts "Hooray! \n #{opponent_one} win the game"
+puts "Hooray! \n#{opponent_one} win the game"
