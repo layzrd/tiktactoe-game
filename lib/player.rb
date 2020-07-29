@@ -1,9 +1,23 @@
 class Player
-  attr_accessor :name[]
-  @current_play = @name[0]
+  attr_accessor :players
 
   def initialize
-    @icons = %w[* #]
-    @current_player_icon = icons[@current_play]
+    self.players = []
+    @index = -1
+  end
+
+  def icon
+    icons = %w[* #]
+    icons[index]
+  end
+
+  def next_player
+    index += 1
+    index = 0 if index >= player.length
+    index
+  end
+
+  def current_player
+    players[index]
   end
 end

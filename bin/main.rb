@@ -29,8 +29,15 @@ def next_move(board, player)
     puts 'Please enter a number within the board'
     next_move(board, player)
   end
-
-  print_board(board, player) unless score.check_winner(board, goto)
+  if score.check_winner(board, row)
+    puts 'You Win!!'
+    exit(true)
+  elsif score.draw
+    puts 'Draw'
+    exit(true)
+  end
+  # print_board(board, player) unless
+  player.next_player
 end
 
 def bootstrap

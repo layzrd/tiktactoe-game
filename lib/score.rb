@@ -1,14 +1,8 @@
 class Score
-  def in_array(item, find)
-    item.each_with_index do |val, i|
-      return i if val.eql? find
-    end
-    false
+  attr_accessor :players
+  def initialize(players)
+    @players = players
   end
-
-  # def initialize(player)
-  #   @player = player
-  # end
 
   def get_position(board, current_position)
     board.each_with_index do |item, index|
@@ -27,9 +21,9 @@ class Score
     false
   end
 
-  def check_winner(board, current_position)
-    current_row = get_position(board, current_position)
-    board[current_row[0]][current_row[1]] = '*' #player.current_play_icon # * or #
+  def check_winner(board, current_row)
+    # current_row = get_position(board, current_position)
+    board[current_row[0]][current_row[1]] = player.icon
     if (board[current_row[0]][0].eql? board[current_row[0]][1]) &&
        (board[current_row[0]][2].eql? board[current_row[0]][1]) ||
        (board[0][current_row[1]].eql? board[1][current_row[1]]) &&
@@ -38,6 +32,21 @@ class Score
       return true
     end
 
+    false
+  end
+
+  def draw(board)
+    return false if board.flatten.count { |item| item.is_a(Integer) } > 4
+
+    true
+  end
+
+  private
+
+  def in_array(item, find)
+    item.each_with_index do |val, i|
+      return i if val.eql? find
+    end
     false
   end
 end
