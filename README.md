@@ -1,6 +1,6 @@
 # TIC-TAC-TOE GAME
 
-![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) [![Run on Repl.it](https://repl.it/badge/github/wrakc/Bubble-Sort---Microverse)](https://repl.it/@aliabdulaziz/ruby-custom-enumerables)
+![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) [![Run on Repl.it](https://repl.it/badge/github/wrakc/Bubble-Sort---Microverse)](https://repl.it/@aliabdulaziz/tiktactoe-game)
 
 > The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
