@@ -24,7 +24,7 @@ def print_board(board, player, die = false)
 end
 
 def next_move(board, player)
-  score = Score.new(player) # manage player scores
+  score = Score.new(player)
   puts "#{player.current_player}#{player.icon} Enter Your Move"
   goto = gets.chomp.to_i
   row = score.get_position(board, goto)
@@ -46,7 +46,7 @@ def next_move(board, player)
 end
 
 def bootstrap
-  player = Player.new # manage all players
+  player = Player.new
   init_board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
   puts 'Welcome to the Tic tac Toe field'
   puts 'Player 1: Enter Your Name'
