@@ -34,7 +34,7 @@ Set up your machine.
   > [Install Ruby](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming)
 - Follow the link below to set up a linter
   > [Set up Linter (rubocop) to check code errors](https://github.com/rubocop-hq/rubocop)
-- Follow the link below to set up a linter
+- Follow the link below to set up rspec
   > [Set up RSpec (testing tool) to run the tests](https://relishapp.com/rspec/docs/gettingstarted)
 - Clone the repository
   > Clone the repository by run the code below on your computer terminal.
