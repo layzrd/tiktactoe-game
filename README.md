@@ -24,6 +24,7 @@ Set up your machine.
 
 - ruby
 - rubocop
+- rspec
 
 ### Setup
 
@@ -33,13 +34,17 @@ Set up your machine.
   > [Install Ruby](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming)
 - Follow the link below to set up a linter
   > [Set up Linter (rubocop) to check code errors](https://github.com/rubocop-hq/rubocop)
+- Follow the link below to set up a linter
+  > [Set up RSpec (testing tool) to run the tests](https://relishapp.com/rspec/docs/gettingstarted)
 - Clone the repository
   > Clone the repository by run the code below on your computer terminal.
   `git clone https://github.com/abredi/tiktactoe-game.git`
 
 ### Usage
-
-Go to the project directory and run open the `ruby bin/ruby.rb` file on your terminal.
+TO run unit tests
+  > Open your terminal then go to the project directory and execute `rspec` command
+For running the program
+  > Open your terminal then go to the project directory and run the `ruby bin/ruby.rb` file on your terminal.
 
 - Instruction to play tictactoe game
   1. The game is played on a grid that's 3 squares by 3 squares.
