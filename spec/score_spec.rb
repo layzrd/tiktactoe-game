@@ -1,10 +1,10 @@
 require 'rspec'
-require '../lib/player.rb'
-require '../lib/score.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/score.rb'
 
 RSpec.describe Score do
   subject { Score.new(player) }
-  
+
   let(:board) { [[1, 2, 3], [4, 5, 6], [7, 8, 9]] }
   let(:player) do
     player = Player.new
@@ -48,4 +48,6 @@ RSpec.describe Score do
       expect(subject.check_winner([[1, 2, '*'], [4, 5, 6], [7, 8, 9]], [1, 2])).to be(false)
     end
   end
+
+
 end
