@@ -57,7 +57,7 @@ RSpec.describe Score do
 
     it 'should return true the occupied spaces by a each player is greater than 4' do
       board.map { |ary| ary.fill('*') }
-      expect(subject.draw(board)).to be false
+      expect(subject.draw(board)).to be true
     end
   end
 end
