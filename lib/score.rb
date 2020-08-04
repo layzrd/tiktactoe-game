@@ -48,5 +48,4 @@ class Score
     end
     false
   end
-  
 end
