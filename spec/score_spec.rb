@@ -4,6 +4,7 @@ require '../lib/score.rb'
 
 RSpec.describe Score do
   subject { Score.new(player) }
+  
   let(:board) { [[1, 2, 3], [4, 5, 6], [7, 8, 9]] }
   let(:player) do
     player = Player.new

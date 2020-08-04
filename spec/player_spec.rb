@@ -6,6 +6,7 @@ RSpec.describe Player do
     subject.players.push('Ali')
     subject.players.push('Alex')
   end
+  
   context 'when first created' do
     it 'should be instance of player class' do
       expect(subject).to be_instance_of Player
