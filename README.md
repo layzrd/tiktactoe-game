@@ -1,7 +1,8 @@
 # TIC-TAC-TOE GAME
 
-![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) [![Run on Repl.it](https://repl.it/badge/github/wrakc/Bubble-Sort---Microverse)](https://repl.it/@aliabdulaziz/tiktactoe-game)
+![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) [![Run on Repl.it](https://repl.it/badge/github/wrakc/Bubble-Sort)](https://repl.it/@aliabdulaziz/tiktactoe-game)
 
+Tic Tac Toe is a timeless paper and pencil game that players of all ages know and love. In this project, I developed a computer program based on the original game. 
 > The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 ## Built With
@@ -34,7 +35,7 @@ Set up your machine.
   > [Install Ruby](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming)
 - Follow the link below to set up a linter
   > [Set up Linter (rubocop) to check code errors](https://github.com/rubocop-hq/rubocop)
-- Follow the link below to set up a linter
+- Follow the link below to set up rspec
   > [Set up RSpec (testing tool) to run the tests](https://relishapp.com/rspec/docs/gettingstarted)
 - Clone the repository
   > Clone the repository by run the code below on your computer terminal.

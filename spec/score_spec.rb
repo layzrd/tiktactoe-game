@@ -50,14 +50,15 @@ RSpec.describe Score do
   end
 
   context '#draw' do
-    it 'should return true if the occupied spaces by a each player is less than 4' do
+    it 'should return false if the occupied spaces by a each player is less than 4' do
       board.first.fill('#')
-      expect(subject.draw(board)).to be true
+      expect(subject.draw(board)).to be false
     end
 
-    it 'should return false if above four position is filled with icon' do
+    it 'should return true if the occupied spaces by a each player is greater than 4' do
+# development
       board.map { |ary| ary.fill('*') }
-      expect(subject.draw(board)).to be false
+      expect(subject.draw(board)).to be true
     end
   end
 end
