@@ -2,6 +2,7 @@
 
 ![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg) [![Run on Repl.it](https://repl.it/badge/github/wrakc/Bubble-Sort---Microverse)](https://repl.it/@aliabdulaziz/tiktactoe-game)
 
+Tic Tac Toe is a timeless paper and pencil game that players of all ages know and love. In this project, I developed a computer program based on the original game. 
 > The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
 ## Built With
@@ -24,6 +25,7 @@ Set up your machine.
 
 - ruby
 - rubocop
+- rspec
 
 ### Setup
 
@@ -33,13 +35,17 @@ Set up your machine.
   > [Install Ruby](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming)
 - Follow the link below to set up a linter
   > [Set up Linter (rubocop) to check code errors](https://github.com/rubocop-hq/rubocop)
+- Follow the link below to set up rspec
+  > [Set up RSpec (testing tool) to run the tests](https://relishapp.com/rspec/docs/gettingstarted)
 - Clone the repository
   > Clone the repository by run the code below on your computer terminal.
   `git clone https://github.com/abredi/tiktactoe-game.git`
 
 ### Usage
-
-Go to the project directory and run open the `ruby bin/ruby.rb` file on your terminal.
+TO run unit tests
+  > Open your terminal then go to the project directory and execute `rspec` command
+For running the program
+  > Open your terminal then go to the project directory and run the `ruby bin/ruby.rb` file on your terminal.
 
 - Instruction to play tictactoe game
   1. The game is played on a grid that's 3 squares by 3 squares.
